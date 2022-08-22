@@ -15,7 +15,18 @@ public class EmpWage {
  if (empCheck == IS_FULL_TIME)
 	  System.out.println("Employee Is Present");
  else
-	  System.out.println("Employee Is Absent");	
+	  System.out.println("Employee Is Absent");
+ 
+ 
+ 
+ int Emphour=0 ;
+ int Employeewage=0;
+ if (empCheck == full_day_hour)
+	  Emphour=8;
+else
+	 Emphour=0 ;
+    Employeewage = Emphour * Wage_per_hour ;
+   System.out.println("Employee_Daily_Wage"   +Employeewage);
 		
 	}
 }
