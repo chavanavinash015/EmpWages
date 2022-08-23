@@ -9,7 +9,8 @@ public class EmpWage {
 		int part_time_hour = 1;
 		int IS_FULL_TIME = 1;
 		int num_of_workday = 20;
-		
+		int Maxhrinmonth = 100;
+
 		double empCheck = Math.floor(Math.random() * 10 % 2);
 		System.out.println(empCheck);
 
@@ -21,6 +22,8 @@ public class EmpWage {
 		int Emphour = 0;
 		int Employeewage = 0;
 		int totalempwage = 0;
+		int totalemphour = 0;
+		int totalworkday = 0;
 
 		if (empCheck == full_day_hour)
 			Emphour = 8;
@@ -36,7 +39,7 @@ public class EmpWage {
 		Employeewage = Emphour * Wage_per_hour;
 		System.out.println("Employee_Daily_Wage" + Employeewage);
 
-		int empCheckCase = (int) Math.floor(Math.random() * 10 %3);
+		int empCheckCase = (int) Math.floor(Math.random() * 10 % 3);
 		switch (empCheckCase) {
 		case 0:
 			part_time_hour: Emphour = 4;
@@ -66,5 +69,24 @@ public class EmpWage {
 			System.out.println("Employee_Daily_Wage" + Employeewage);
 		}
 		System.out.println("Total Empoyee Wage: " + totalempwage);
+
+		while (totalemphour <= 100 && totalworkday < 20) {
+			totalworkday++;
+
+			switch (empCheckCase) {
+			case 1:
+				part_time_hour: Emphour = 4;
+				break;
+			case 2:
+				full_day_hour: Emphour = 8;
+				break;
+			default:
+				Emphour = 0;
+			}
+			totalemphour += Emphour;
+			System.out.println("day#:" + totalworkday + "Employee_Daily_Wage: " + Emphour);
+		}
+		int Totalempwage = totalemphour * Wage_per_hour;
+		System.out.println("Total emp Wage : " + Totalempwage);
 	}
 }
