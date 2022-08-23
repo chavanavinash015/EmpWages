@@ -25,11 +25,26 @@ public class EmpWage {
 		Employeewage = Emphour * Wage_per_hour;
 		System.out.println("Employee_Daily_Wage" + Employeewage);
 
-		 if (empCheck==part_time_hour)
-			   Emphour=4;
-		   else if(empCheck==full_day_hour)
-			   Emphour=8;
-		   Employeewage = Emphour * Wage_per_hour ;
-		   System.out.println("Employee_Daily_Wage" + Employeewage);
+		if (empCheck == part_time_hour)
+			Emphour = 4;
+		else if (empCheck == full_day_hour)
+			Emphour = 8;
+		Employeewage = Emphour * Wage_per_hour;
+		System.out.println("Employee_Daily_Wage" + Employeewage);
+
+		int empCheckCase = (int) Math.floor(Math.random() * 10 % 2);
+		switch (empCheckCase) {
+		case 0:
+			part_time_hour: Emphour = 4;
+			break;
+		case 1:
+			full_day_hour: Emphour = 8;
+			break;
+		default:
+			Emphour = 0;
+		}
+		Employeewage = Emphour * Wage_per_hour;
+		System.out.println("Employee_Daily_Wage" + Employeewage);
+
 	}
 }
