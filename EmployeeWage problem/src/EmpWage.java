@@ -1,4 +1,4 @@
-
+	
 public class EmpWage {
 
 	public static void main(String[] args) {
@@ -89,4 +89,44 @@ public class EmpWage {
 		int Totalempwage = totalemphour * Wage_per_hour;
 		System.out.println("Total emp Wage : " + Totalempwage);
 	}
+	public class EmpWageClassMethod {
+		public static final int Wage_per_hour = 20;
+		public static final int full_day_hour = 2;
+		public static final int part_time_hour = 1;
+		public static final int num_of_workday = 20;
+		public static final int Maxhrinmonth = 100;
+
+		public static int computeEmpWage() {
+
+			int emphour = 0;
+			int totalemphour = 0;
+			int totalworkdays = 0;
+
+			while (totalemphour <= Maxhrinmonth && totalworkdays < num_of_workday) {
+				totalworkdays++;
+				int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+				switch (empCheck) {
+				case part_time_hour:
+					emphour = 4;
+					break;
+				case full_day_hour:
+					emphour = 8;
+					break;
+				default:
+					emphour = 0;
+				}
+				totalemphour += emphour;
+				System.out.println("Day#: " + totalworkdays + " Employee Hour:" + emphour);
+			}
+			int totalEmpWage = totalemphour * Wage_per_hour;
+			System.out.println("Total Employee Wage: " + totalEmpWage);
+			return totalEmpWage;
+		}
+
+		public static void main(String[] args) {
+			computeEmpWage();
+		}
+
+	}
+
 }
